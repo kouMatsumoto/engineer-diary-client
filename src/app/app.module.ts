@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MdButtonModule,
+    MdSidenavModule,
+    MdToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
