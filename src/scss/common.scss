@@ -1,0 +1,7 @@
+/**
+ * This is file to be imported by each module scss files.
+ * This file must be consist of variables and mixin to avoid multiple declaration.
+ */
+
+@import 'variables/index.scss';
+@import 'mixin/index.scss';
