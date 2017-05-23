@@ -1,6 +1,6 @@
 import { EngineerDiaryClientPage } from './app.po';
 
-describe('engineer-diary-client App', () => {
+describe('engineer-life-client App', () => {
   let page: EngineerDiaryClientPage;
 
   beforeEach(() => {
