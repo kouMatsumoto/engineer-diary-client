@@ -1,0 +1,20 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { Record } from '../../types/record';
+
+
+@Component({
+  selector: 'app-main-card',
+  templateUrl: './main-card.component.html',
+  styleUrls: ['./main-card.component.scss']
+})
+export class MainCardComponent implements OnInit {
+
+  // this is used to display
+  @Input() record: Record;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
