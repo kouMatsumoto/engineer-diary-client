@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 import { MainCardComponent } from './components/main-card/main-card.component';
 import { MainCardContainerComponent } from './components/main-card-container/main-card-container.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,18 @@ import { MainCardContainerComponent } from './components/main-card-container/mai
     MdButtonModule,
     MdSidenavModule,
     MdToolbarModule,
-    MdCardModule
+    MdCardModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        redirectTo: '/records',
+        pathMatch: 'full'
+      },
+      {
+        path: 'records',
+        component: MainCardContainerComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
