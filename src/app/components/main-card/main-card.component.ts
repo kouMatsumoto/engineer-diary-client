@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { record } from '../../mocks/record';
+import { Component, Input, OnInit } from '@angular/core';
+import { Record } from '../../types/record';
 
 
 @Component({
@@ -9,8 +9,8 @@ import { record } from '../../mocks/record';
 })
 export class MainCardComponent implements OnInit {
 
-  // this is data used to display
-  data = record;
+  // this is used to display
+  @Input() record: Record;
 
   constructor() { }
 
