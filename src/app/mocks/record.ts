@@ -1,6 +1,6 @@
 import { Record } from '../types/record';
 
-export const record: Record = {
+export const RECORD: Record = {
   title: 'Title',
   date: '2017-05-24',
   avatar: 'https://material.angular.io/shiba1.d84e1a8ed94377452dbf.jpg',
@@ -8,3 +8,5 @@ export const record: Record = {
   // tslint:disable-line
   note: 'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.'
 };
+
+export const RECORDS: Record[] = [ RECORD, RECORD, RECORD, RECORD, RECORD ];
