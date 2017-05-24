@@ -6,14 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
-import { MainCardComponent } from './components/main-card/main-card.component';
+import { RecordCardComponent } from './components/record-card/record-card.component';
 import { MainCardContainerComponent } from './components/main-card-container/main-card-container.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainCardComponent,
+    RecordCardComponent,
     MainCardContainerComponent
   ],
   imports: [

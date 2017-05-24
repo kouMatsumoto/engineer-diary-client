@@ -3,11 +3,11 @@ import { Record } from '../../types/record';
 
 
 @Component({
-  selector: 'app-main-card',
-  templateUrl: './main-card.component.html',
-  styleUrls: ['./main-card.component.scss']
+  selector: 'app-record-card',
+  templateUrl: './record-card.component.html',
+  styleUrls: ['./record-card.component.scss']
 })
-export class MainCardComponent implements OnInit {
+export class RecordCardComponent implements OnInit {
 
   // this is used to display
   @Input() record: Record;
