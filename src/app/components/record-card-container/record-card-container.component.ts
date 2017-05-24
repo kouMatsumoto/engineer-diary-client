@@ -3,12 +3,12 @@ import { Record } from '../../types/record';
 import { RecordService } from '../../services/record.service';
 
 @Component({
-  selector: 'app-main-card-container',
+  selector: 'app-record-card-container',
   providers: [RecordService],
-  templateUrl: './main-card-container.component.html',
-  styleUrls: ['./main-card-container.component.scss']
+  templateUrl: './record-card-container.component.html',
+  styleUrls: ['./record-card-container.component.scss']
 })
-export class MainCardContainerComponent implements OnInit {
+export class RecordCardContainerComponent implements OnInit {
 
   records: Record[];
 

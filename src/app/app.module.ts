@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 import { RecordCardComponent } from './components/record-card/record-card.component';
-import { MainCardContainerComponent } from './components/main-card-container/main-card-container.component';
+import { RecordCardContainerComponent } from './components/record-card-container/record-card-container.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecordCardComponent,
-    MainCardContainerComponent
+    RecordCardContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,7 @@ import { RouterModule } from '@angular/router';
       },
       {
         path: 'records',
-        component: MainCardContainerComponent
+        component: RecordCardContainerComponent
       }
     ])
   ],
