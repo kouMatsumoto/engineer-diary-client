@@ -1,6 +1,7 @@
 import { Record } from '../types/record';
 
 export const RECORD: Record = {
+  id: '1',
   title: 'Title',
   date: '2017-05-24',
   avatar: 'https://material.angular.io/shiba1.d84e1a8ed94377452dbf.jpg',

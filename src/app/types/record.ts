@@ -1,4 +1,5 @@
 export interface Record {
+  id: string;
   title: string;
   date: string;
   avatar: string;
