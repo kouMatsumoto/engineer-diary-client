@@ -8,8 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 import { RecordCardComponent } from './components/record-card/record-card.component';
 import { RecordCardContainerComponent } from './components/record-card-container/record-card-container.component';
-import { RouterModule } from '@angular/router';
 import { RecordDetailContainerComponent } from './components/record-detail-container/record-detail-container.component';
+import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -27,21 +27,7 @@ import { RecordDetailContainerComponent } from './components/record-detail-conta
     MdSidenavModule,
     MdToolbarModule,
     MdCardModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/records',
-        pathMatch: 'full'
-      },
-      {
-        path: 'records',
-        component: RecordCardContainerComponent
-      },
-      {
-        path: 'records/:id',
-        component: RecordDetailContainerComponent
-      },
-    ])
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
