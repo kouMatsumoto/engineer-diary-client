@@ -9,12 +9,14 @@ import { MdButtonModule, MdCardModule, MdSidenavModule, MdToolbarModule } from '
 import { RecordCardComponent } from './components/record-card/record-card.component';
 import { RecordCardContainerComponent } from './components/record-card-container/record-card-container.component';
 import { RouterModule } from '@angular/router';
+import { RecordDetailContainerComponent } from './components/record-detail-container/record-detail-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecordCardComponent,
-    RecordCardContainerComponent
+    RecordCardContainerComponent,
+    RecordDetailContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,11 @@ import { RouterModule } from '@angular/router';
       {
         path: 'records',
         component: RecordCardContainerComponent
-      }
+      },
+      {
+        path: 'records/:id',
+        component: RecordDetailContainerComponent
+      },
     ])
   ],
   providers: [],
