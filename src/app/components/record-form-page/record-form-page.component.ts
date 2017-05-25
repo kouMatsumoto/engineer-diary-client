@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecordFormPageComponent implements OnInit {
 
+  model = {
+    data: new Date(),
+    title: '',
+    condition: null,
+    note: ''
+  };
+
   constructor() { }
 
   ngOnInit() {
