@@ -10,13 +10,15 @@ import { RecordCardComponent } from './components/record-card/record-card.compon
 import { RecordCardContainerComponent } from './components/record-card-container/record-card-container.component';
 import { RecordDetailContainerComponent } from './components/record-detail-container/record-detail-container.component';
 import { RoutingModule } from './routing/routing.module';
+import { RecordFormPageComponent } from './components/record-form-page/record-form-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecordCardComponent,
     RecordCardContainerComponent,
-    RecordDetailContainerComponent
+    RecordDetailContainerComponent,
+    RecordFormPageComponent
   ],
   imports: [
     BrowserModule,
