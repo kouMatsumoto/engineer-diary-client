@@ -1,14 +1,29 @@
 import { Injectable } from '@angular/core';
 import { RECORDS } from '../mocks/record';
 import { Record } from '../types/record';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import { Http } from '@angular/http';
+import { environment } from '../../environments/environment';
+
 
 @Injectable()
 export class RecordService {
+  apiUrl: string;
 
-  constructor() { }
+  constructor(private http: Http) {
+    this.apiUrl = environment.apiPrefix + 'records/';
+  }
+
+  fetchRecordsFromServer(): Observable<Record[]> {
+    return this.http
+      .get(this.apiUrl)
+      .map(response => <Record[]>response.json());
+  }
 
   // TODO: implement with http
   getRecords(): Record[] {
+    this.fetchRecordsFromServer();
     return RECORDS;
   }
 
