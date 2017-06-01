@@ -15,6 +15,18 @@ export class RecordService {
     this.apiUrl = environment.apiPrefix + 'records/';
   }
 
+  /**
+   * create a new record with sending data to server
+   */
+  createNewRecord(data: any): Observable<Record> {
+    return this.http
+      .post(this.apiUrl, data)
+      .map(response => {
+        console.log('post response', response);
+        return <Record>response.json().data;
+      });
+  }
+
   fetchRecordsFromServer(): Observable<Record[]> {
     return this.http
       .get(this.apiUrl)
