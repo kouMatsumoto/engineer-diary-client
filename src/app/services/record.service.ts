@@ -18,7 +18,7 @@ export class RecordService {
   fetchRecordsFromServer(): Observable<Record[]> {
     return this.http
       .get(this.apiUrl)
-      .map(response => <Record[]>response.json());
+      .map(response => <Record[]>response.json().data);
   }
 
   // TODO: implement with http
