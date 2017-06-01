@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Record } from '../../types/record';
 import { RecordService } from '../../services/record.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-record-card-container',
@@ -10,7 +11,7 @@ import { RecordService } from '../../services/record.service';
 })
 export class RecordCardContainerComponent implements OnInit {
 
-  records: Record[];
+  records: Observable<Record[]>;
 
   constructor(private recordService: RecordService) { }
 
@@ -19,7 +20,6 @@ export class RecordCardContainerComponent implements OnInit {
   }
 
   getRecords(): void {
-    this.records = this.recordService.getRecords();
+    this.records = this.recordService.fetchRecordsFromServer();
   }
-
 }

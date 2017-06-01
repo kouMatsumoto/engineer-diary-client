@@ -1,50 +1,69 @@
 <section class="form-container">
-  <div class="input-row">
-    <md-input-container>
-      <input
-        mdInput
-        [(ngModel)]="model.date"
-        [mdDatepicker]="picker"
-        placeholder="Choose a date"
-        required >
-      <button mdSuffix [mdDatepickerToggle]="picker"></button>
-    </md-input-container>
-    <md-datepicker #picker></md-datepicker>
-  </div>
+  <form
+    (ngSubmit)="onSubmit()"
+    #recordForm="ngForm">
 
-  <div class="input-row">
-    <md-input-container>
-      <input
-        mdInput
-        [(ngModel)]="model.title"
-        type="text"
-        placeholder="Title"
-        required >
-    </md-input-container>
-  </div>
+    <div class="input-row">
+      <md-input-container>
+        <input
+          mdInput
+          [(ngModel)]="model.date"
+          [mdDatepicker]="picker"
+          name="data"
+          placeholder="Choose a date"
+          required >
+        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+      </md-input-container>
+      <md-datepicker #picker></md-datepicker>
+    </div>
 
-  <div class="input-row">
-    <md-input-container>
-      <input
-        mdInput
-        [(ngModel)]="model.condition"
-        type="number"
-        placeholder="Condition"
-        required >
-    </md-input-container>
-  </div>
+    <div class="input-row">
+      <md-input-container>
+        <input
+          mdInput
+          [(ngModel)]="model.title"
+          type="text"
+          name="title"
+          placeholder="Title"
+          required >
+      </md-input-container>
+    </div>
 
-  <div class="input-row">
-    <md-input-container>
+    <div class="input-row">
+      <md-input-container>
+        <input
+          mdInput
+          [(ngModel)]="model.condition"
+          type="number"
+          name="condition"
+          placeholder="Condition"
+          required >
+      </md-input-container>
+    </div>
+
+    <div class="input-row">
+      <md-input-container>
       <textarea
         mdInput
         [(ngModel)]="model.note"
+        name="note"
         placeholder="Note"
         required >
       </textarea>
-    </md-input-container>
-  </div>
+      </md-input-container>
+    </div>
 
-  <div>form-values</div>
-  <div>{{ showModel(model) }}</div>
+    <div class="input-row">
+      <button
+        md-button
+        type="submit"
+        [color]="'primary'"
+        [disabled]="!recordForm.form.valid || isSubmitted">
+          Submit
+      </button>
+    </div>
+
+    <div>form-values</div>
+    <div>{{ showModel(model) }}</div>
+  </form>
 </section>

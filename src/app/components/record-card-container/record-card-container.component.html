@@ -1,7 +1,7 @@
 <div>
   <app-record-card
     class="card"
-    *ngFor="let record of records"
+    *ngFor="let record of records | async"
     [record]="record">
   </app-record-card>
 </div>
