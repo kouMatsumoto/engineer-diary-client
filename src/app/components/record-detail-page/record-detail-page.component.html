@@ -1,0 +1,22 @@
+<div>
+  <div *ngIf="record">
+    <table>
+      <tr>
+        <th>ID</th>
+        <td>{{record.id}}</td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>{{record.date | date}}</td>
+      </tr>
+      <tr>
+        <th>Condition</th>
+        <td>{{record.condition}}</td>
+      </tr>
+      <tr>
+        <th>Note</th>
+        <td>{{record.note}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

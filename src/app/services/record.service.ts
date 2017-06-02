@@ -9,11 +9,9 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class RecordService {
-  apiUrl: string;
+  apiUrl: string = environment.apiPrefix + 'records/';
 
-  constructor(private http: Http) {
-    this.apiUrl = environment.apiPrefix + 'records/';
-  }
+  constructor(private http: Http) { }
 
   /**
    * create a new record with sending data to server
@@ -33,22 +31,12 @@ export class RecordService {
       .map(response => <Record[]>response.json().data);
   }
 
-  // TODO: implement with http
-  getRecords(): Record[] {
-    this.fetchRecordsFromServer();
-    return RECORDS;
-  }
-
-  getRecordById(id: string): Promise<Record> {
-    return new Promise((resolve, reject) => {
-      const records = this.getRecords();
-      for (const r of records) {
-        if (r.id === id) {
-          return resolve(r);
-        }
-      }
-
-      reject(new Error('Not found'));
-    });
+  /**
+   * Fetch a record by id from api-server.
+   */
+  fetchRecordById(id: string): Observable<Record> {
+    return this.http
+      .get(this.apiUrl + id)
+      .map(response => <Record>response.json().data);
   }
 }
