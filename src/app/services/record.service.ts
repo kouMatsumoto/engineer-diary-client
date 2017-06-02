@@ -9,11 +9,9 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class RecordService {
-  apiUrl: string;
+  apiUrl: string = environment.apiPrefix + 'records/';
 
-  constructor(private http: Http) {
-    this.apiUrl = environment.apiPrefix + 'records/';
-  }
+  constructor(private http: Http) { }
 
   /**
    * create a new record with sending data to server
@@ -31,6 +29,15 @@ export class RecordService {
     return this.http
       .get(this.apiUrl)
       .map(response => <Record[]>response.json().data);
+  }
+
+  /**
+   * Fetch a record by id from api-server.
+   */
+  fetchRecordById(id: string): Observable<Record> {
+    return this.http
+      .get(this.apiUrl + id)
+      .map(response => <Record>response.json().data);
   }
 
   // TODO: implement with http
