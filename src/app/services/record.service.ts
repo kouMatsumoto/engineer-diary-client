@@ -39,23 +39,4 @@ export class RecordService {
       .get(this.apiUrl + id)
       .map(response => <Record>response.json().data);
   }
-
-  // TODO: implement with http
-  getRecords(): Record[] {
-    this.fetchRecordsFromServer();
-    return RECORDS;
-  }
-
-  getRecordById(id: string): Promise<Record> {
-    return new Promise((resolve, reject) => {
-      const records = this.getRecords();
-      for (const r of records) {
-        if (r.id === id) {
-          return resolve(r);
-        }
-      }
-
-      reject(new Error('Not found'));
-    });
-  }
 }
