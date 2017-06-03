@@ -23,4 +23,18 @@ export class RecordDetailPageComponent implements OnInit {
       .switchMap((params: Params) => this.recordService.fetchRecordById(params['id']))
       .subscribe((record: Record) => this.record = record);
   }
+
+  /**
+   * Delete record user is showing on this page.
+   *
+   * @todo: add page navigation when complete deleting
+   * @param {string} id - target record id
+   * @return {void}
+   */
+  deleteRecord(id: string): void {
+    this.recordService.deleteOne(id)
+      .subscribe((deleted: Record) => {
+        // handle complete deleting
+      });
+  }
 }
