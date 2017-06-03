@@ -15,6 +15,7 @@ import { RoutingModule } from './routing/routing.module';
 import { RecordCreatePageComponent } from './components/record-create-page/record-create-page.component';
 import { RecordFormComponent } from './components/record-form/record-form.component';
 import { RecordDetailPageComponent } from './components/record-detail-page/record-detail-page.component';
+import { RecordUpdatePageComponent } from './components/record-update-page/record-update-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RecordDetailPageComponent } from './components/record-detail-page/recor
     RecordCardContainerComponent,
     RecordCreatePageComponent,
     RecordFormComponent,
-    RecordDetailPageComponent
+    RecordDetailPageComponent,
+    RecordUpdatePageComponent
   ],
   imports: [
     BrowserModule,
