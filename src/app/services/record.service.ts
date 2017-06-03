@@ -25,6 +25,12 @@ export class RecordService {
       });
   }
 
+  /**
+   * Fetch all records from server.
+   *
+   * @todo: implement query to filter records.
+   * @return {Observable<Record[]>}
+   */
   fetchRecordsFromServer(): Observable<Record[]> {
     return this.http
       .get(this.apiUrl)
