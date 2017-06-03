@@ -26,6 +26,18 @@ export class RecordService {
   }
 
   /**
+   * Delete a specific record from server.
+   *
+   * @param id
+   * @return {Observable<Record>}
+   */
+  deleteOne(id: string): Observable<Record> {
+    return this.http
+      .delete(this.apiUrl + id)
+      .map(response => <Record>response.json().data);
+  }
+
+  /**
    * Fetch all records from server.
    *
    * @todo: implement query to filter records.

@@ -18,5 +18,14 @@
         <td>{{record.note}}</td>
       </tr>
     </table>
+
+    <div>
+      <button
+        md-button
+        [color]="'primary'"
+        (click)="deleteRecord(record.id)">
+        Delete
+      </button>
+    </div>
   </div>
 </div>
