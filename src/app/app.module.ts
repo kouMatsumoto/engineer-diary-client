@@ -12,18 +12,20 @@ import {
 import { RecordCardComponent } from './components/record-card/record-card.component';
 import { RecordCardContainerComponent } from './components/record-card-container/record-card-container.component';
 import { RoutingModule } from './routing/routing.module';
-import { RecordFormPageComponent } from './components/record-form-page/record-form-page.component';
-import { RecordFormContainerComponent } from './components/record-form-container/record-form-container.component';
+import { RecordCreatePageComponent } from './components/record-create-page/record-create-page.component';
+import { RecordFormComponent } from './components/record-form/record-form.component';
 import { RecordDetailPageComponent } from './components/record-detail-page/record-detail-page.component';
+import { RecordUpdatePageComponent } from './components/record-update-page/record-update-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecordCardComponent,
     RecordCardContainerComponent,
-    RecordFormPageComponent,
-    RecordFormContainerComponent,
-    RecordDetailPageComponent
+    RecordCreatePageComponent,
+    RecordFormComponent,
+    RecordDetailPageComponent,
+    RecordUpdatePageComponent
   ],
   imports: [
     BrowserModule,

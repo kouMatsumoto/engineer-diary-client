@@ -23,6 +23,12 @@
       <button
         md-button
         [color]="'primary'"
+        [routerLink]="['/records', record.id, 'edit']">
+        Edit
+      </button>
+      <button
+        md-button
+        [color]="'primary'"
         (click)="deleteRecord(record.id)">
         Delete
       </button>

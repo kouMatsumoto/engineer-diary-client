@@ -57,4 +57,10 @@ export class RecordService {
       .get(this.apiUrl + id)
       .map(response => <Record>response.json().data);
   }
+
+  updateRecordById(id: string, update): Observable<Record> {
+    return this.http
+      .put(this.apiUrl + id, update)
+      .map(response => <Record>response.json().data);
+  }
 }
