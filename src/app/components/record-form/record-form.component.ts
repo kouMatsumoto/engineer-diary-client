@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { RecordService } from '../../services/record.service';
+import { Record, RecordSeed } from '../../types/record';
 
 @Component({
   selector: 'app-record-form',
@@ -7,30 +8,59 @@ import { RecordService } from '../../services/record.service';
   styleUrls: ['./record-form.component.scss'],
   providers: [RecordService]
 })
-export class RecordFormComponent implements OnInit {
+export class RecordFormComponent implements OnInit, OnChanges {
   private isSubmitted: boolean;
+  /** whether this form is used to update record */
+  @Input()
+  update: Record;
 
-  model = {
-    date: new Date(),
-    title: '',
-    condition: null,
-    note: ''
-  };
+  model: RecordSeed;
 
   constructor(private recordService: RecordService) { }
-
 
   /**
    * Initialize properties of this class.
    */
   ngOnInit() {
-    this.resetForm();
+    this.isSubmitted = false;
+    this.setOrInitModel();
+  }
+
+  ngOnChanges() {
+    if (this.update) {
+      this.setOrInitModel();
+    }
+  }
+
+  private getNewModel(): RecordSeed {
+    return {
+      date: new Date(),
+      title: '',
+      condition: null,
+      note: ''
+    };
   }
 
   /**
    * When #recordForm is submitted.
    */
   onSubmit() {
+    if (this.update) {
+      this.submitToUpdate();
+    } else {
+      this.submitToCreate();
+    }
+  }
+
+  setOrInitModel() {
+    if (this.update) {
+      this.model = Object.assign({}, this.update);
+    } else {
+      this.model = this.getNewModel();
+    }
+  }
+
+  submitToCreate(): void {
     if (this.isSubmitted) {
       return;
     }
@@ -39,35 +69,23 @@ export class RecordFormComponent implements OnInit {
     this.recordService.createNewRecord(this.model)
       .subscribe(data => {
         console.log(data, 'data has been created');
-        this.resetForm();
+        this.model = this.getNewModel(); // reset form
+        this.isSubmitted = false;
         // @todo: add notification of success.
       });
   }
 
-  /**
-   * This method is executed
-   *   - when this component is being initialized
-   *   - when creating data finishes
-   *
-   * @todo: need to initialize state of md-inputs (e.g. dirty)
-   */
-  resetForm() {
-    this.model = {
-      date: new Date(),
-      title: '',
-      condition: null,
-      note: ''
-    };
+  submitToUpdate() {
+    if (this.isSubmitted) {
+      return;
+    }
 
-    this.isSubmitted = false;
-  }
-
-
-  /**
-   * to confirm what model includes
-   * TODO: this method is temporary method to develop
-   */
-  showModel(): string {
-    return JSON.stringify(this.model);
+    this.isSubmitted = true;
+    this.recordService.updateRecordById(this.update.id, this.model)
+      .subscribe(data => {
+        console.log(data, 'data has been updated');
+        this.isSubmitted = false;
+        // @todo: add notification of success.
+      });
   }
 }
