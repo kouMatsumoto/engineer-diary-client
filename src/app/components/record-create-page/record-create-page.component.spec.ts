@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecordFormPageComponent } from './record-form-page.component';
+import { RecordCreatePageComponent } from './record-create-page.component';
 
-describe('RecordFormPageComponent', () => {
-  let component: RecordFormPageComponent;
-  let fixture: ComponentFixture<RecordFormPageComponent>;
+describe('RecordCreatePageComponent', () => {
+  let component: RecordCreatePageComponent;
+  let fixture: ComponentFixture<RecordCreatePageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecordFormPageComponent ]
+      declarations: [ RecordCreatePageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecordFormPageComponent);
+    fixture = TestBed.createComponent(RecordCreatePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

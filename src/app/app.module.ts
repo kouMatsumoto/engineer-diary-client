@@ -12,7 +12,7 @@ import {
 import { RecordCardComponent } from './components/record-card/record-card.component';
 import { RecordCardContainerComponent } from './components/record-card-container/record-card-container.component';
 import { RoutingModule } from './routing/routing.module';
-import { RecordFormPageComponent } from './components/record-form-page/record-form-page.component';
+import { RecordCreatePageComponent } from './components/record-create-page/record-create-page.component';
 import { RecordFormComponent } from './components/record-form/record-form.component';
 import { RecordDetailPageComponent } from './components/record-detail-page/record-detail-page.component';
 
@@ -21,7 +21,7 @@ import { RecordDetailPageComponent } from './components/record-detail-page/recor
     AppComponent,
     RecordCardComponent,
     RecordCardContainerComponent,
-    RecordFormPageComponent,
+    RecordCreatePageComponent,
     RecordFormComponent,
     RecordDetailPageComponent
   ],
