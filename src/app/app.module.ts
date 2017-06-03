@@ -13,7 +13,7 @@ import { RecordCardComponent } from './components/record-card/record-card.compon
 import { RecordCardContainerComponent } from './components/record-card-container/record-card-container.component';
 import { RoutingModule } from './routing/routing.module';
 import { RecordFormPageComponent } from './components/record-form-page/record-form-page.component';
-import { RecordFormContainerComponent } from './components/record-form-container/record-form-container.component';
+import { RecordFormComponent } from './components/record-form/record-form.component';
 import { RecordDetailPageComponent } from './components/record-detail-page/record-detail-page.component';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { RecordDetailPageComponent } from './components/record-detail-page/recor
     RecordCardComponent,
     RecordCardContainerComponent,
     RecordFormPageComponent,
-    RecordFormContainerComponent,
+    RecordFormComponent,
     RecordDetailPageComponent
   ],
   imports: [

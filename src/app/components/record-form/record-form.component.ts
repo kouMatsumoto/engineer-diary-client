@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { RecordService } from '../../services/record.service';
 
 @Component({
-  selector: 'app-record-form-container',
-  templateUrl: './record-form-container.component.html',
-  styleUrls: ['./record-form-container.component.scss'],
+  selector: 'app-record-form',
+  templateUrl: './record-form.component.html',
+  styleUrls: ['./record-form.component.scss'],
   providers: [RecordService]
 })
-export class RecordFormContainerComponent implements OnInit {
+export class RecordFormComponent implements OnInit {
   private isSubmitted: boolean;
 
   model = {
