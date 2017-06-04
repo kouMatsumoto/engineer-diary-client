@@ -5,8 +5,7 @@ import { Record, RecordSeed } from '../../types/record';
 @Component({
   selector: 'app-record-form',
   templateUrl: './record-form.component.html',
-  styleUrls: ['./record-form.component.scss'],
-  providers: [RecordService]
+  styleUrls: ['./record-form.component.scss']
 })
 export class RecordFormComponent implements OnInit, OnChanges {
   private isSubmitted: boolean;

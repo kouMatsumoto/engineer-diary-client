@@ -5,7 +5,6 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-record-card-container',
-  providers: [RecordService],
   templateUrl: './record-card-container.component.html',
   styleUrls: ['./record-card-container.component.scss']
 })

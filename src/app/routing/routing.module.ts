@@ -4,6 +4,7 @@ import { RecordCardContainerComponent } from '../components/record-card-containe
 import { RecordCreatePageComponent } from '../components/record-create-page/record-create-page.component';
 import { RecordDetailPageComponent } from '../components/record-detail-page/record-detail-page.component';
 import { RecordUpdatePageComponent } from '../components/record-update-page/record-update-page.component';
+import { RecordResolver } from './resolvers/record.resolver';
 
 
 const routes: Routes = [
@@ -26,7 +27,10 @@ const routes: Routes = [
   },
   {
     path: 'records/:id/edit',
-    component: RecordUpdatePageComponent
+    component: RecordUpdatePageComponent,
+    resolve: {
+      record: RecordResolver
+    }
   },
 ];
 

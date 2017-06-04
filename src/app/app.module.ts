@@ -16,6 +16,8 @@ import { RecordCreatePageComponent } from './components/record-create-page/recor
 import { RecordFormComponent } from './components/record-form/record-form.component';
 import { RecordDetailPageComponent } from './components/record-detail-page/record-detail-page.component';
 import { RecordUpdatePageComponent } from './components/record-update-page/record-update-page.component';
+import { RecordResolver } from './routing/resolvers/record.resolver';
+import { RecordService } from './services/record.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,10 @@ import { RecordUpdatePageComponent } from './components/record-update-page/recor
     MdNativeDateModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [
+    RecordService,
+    RecordResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
