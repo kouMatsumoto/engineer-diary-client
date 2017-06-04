@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Record } from '../../types/record';
 import { RecordService } from '../../services/record.service';
 
@@ -12,14 +12,9 @@ import { RecordService } from '../../services/record.service';
 export class RecordUpdatePageComponent implements OnInit {
   record: Record;
 
-  constructor(
-    private route: ActivatedRoute,
-    private recordService: RecordService
-  ) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params
-      .switchMap((params: Params) => this.recordService.fetchRecordById(params['id']))
-      .subscribe((record: Record) => this.record = record);
+    this.route.data.subscribe(data => this.record = data['record']);
   }
 }
